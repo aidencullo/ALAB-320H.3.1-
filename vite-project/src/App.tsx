@@ -65,12 +65,29 @@ function App() {
 
     const [state, setState] = useState(learners)
 
-  return (
-    <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    const display = state.map((learner, index) => {
+	return (
+	    <div key={index}>
+		<h1>{learner.name}</h1>
+		<p>{learner.bio}</p>
+		<ul>
+		    {learner.scores.map((score, index) => {
+			return (
+			    <li key={index}>
+				<p>Date: {score.date}</p>
+				<p>Score: {score.score}</p>
+			    </li>
+			)
+		    })}
+		</ul>
+	    </div>
+	)
+    })
+
+    return (
+	<div>
+	{display}
+	</div>
   )
 }
 
