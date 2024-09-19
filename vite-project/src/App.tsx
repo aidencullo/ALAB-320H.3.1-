@@ -69,7 +69,7 @@ function App() {
 
     const display = state.map((learner, index) => {
 	return (
-	    <Learner key={index} learner={learner} />
+	    <Learner key={index} {...learner} />
 	)
     })
 

@@ -6,19 +6,15 @@ interface Learner {
     scores: number[];
 }
 
-interface LearnerProps {
-    learner: Learner;
-}
-
-export default function Learner({ learner }: LearnerProps) {
+export default function Learner({ name, bio, scores }: Learner) {
     return (
 	<>
-	    <h1>{learner.name}</h1>
-	<p>{learner.bio}</p>
+	    <h1>{name}</h1>
+	<p>{bio}</p>
 	<ul>
-	    {learner.scores.map((score, index) => {
+	    {scores.map((score, index) => {
 		return (
-		    <Score key={index} score={score} />
+		    <Score key={index} {...score} />
 		)
 	    })}
 	</ul>

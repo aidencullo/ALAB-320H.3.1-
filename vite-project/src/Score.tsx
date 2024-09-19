@@ -3,16 +3,12 @@ interface Score {
     score: number;
 }
 
-interface ScoreProps {
-    score: Score;
-}
-
-export default function Score({ score }: ScoreProps) {
+export default function Score({ date, score }: Score) {
     return (
 	<>
 	    <li>
-		<p>Date: {score.date}</p>
-	<p>Score: {score.score}</p>
+		<p>Date: {date}</p>
+	<p>Score: {score}</p>
 	</li>
 	</>
     );
