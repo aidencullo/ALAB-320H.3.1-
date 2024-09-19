@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import Learner from './Learner.tsx'
+
 const learners = [
   {
     name: 'Cait Yomorta',
@@ -67,20 +69,7 @@ function App() {
 
     const display = state.map((learner, index) => {
 	return (
-	    <div key={index}>
-		<h1>{learner.name}</h1>
-		<p>{learner.bio}</p>
-		<ul>
-		    {learner.scores.map((score, index) => {
-			return (
-			    <li key={index}>
-				<p>Date: {score.date}</p>
-				<p>Score: {score.score}</p>
-			    </li>
-			)
-		    })}
-		</ul>
-	    </div>
+	    <Learner key={index} learner={learner} />
 	)
     })
 
