@@ -1,3 +1,5 @@
+import Score from './Score.tsx';
+
 export default function Learner({ learner }) {
     return (
 	<>
@@ -6,10 +8,7 @@ export default function Learner({ learner }) {
 	<ul>
 	    {learner.scores.map((score, index) => {
 		return (
-		    <li key={index}>
-			<p>Date: {score.date}</p>
-			<p>Score: {score.score}</p>
-		    </li>
+		    <Score key={index} score={score} />
 		)
 	    })}
 	</ul>
